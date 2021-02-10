@@ -8,7 +8,7 @@ const autoPrefixer = require('gulp-autoprefixer');
 // const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const zip = require('gulp-zip');
-// const uglifyJs = require('gulp-uglify');
+const uglifyJs = require('gulp-uglify');
 const img = require('gulp-image');
 const connect = require('gulp-connect');
 const newer = require('gulp-newer');
@@ -35,17 +35,19 @@ const cssTask = () => {
 		.pipe(dest('dist/css/'))
 		.pipe(connect.reload());
 };
-// const jsTask = () => {
-// 	return src('./src/js/*.js', { since: lastRun(jsTask) })
-// 		.pipe(newer('dist/js/index.js'))
-// 		.pipe(sourceMap.init())
-// 		.pipe(babel({ presets: ['@babel/env'] }))
-// 		.pipe(concat('index.js'))
-// 		.pipe(uglifyJs())
-// 		.pipe(sourceMap.write('.'))
-// 		.pipe(dest('dist/js/'))
-// 		.pipe(connect.reload());
-// };
+const jsTask = () => {
+	return (
+		src('./src/js/*.js', { since: lastRun(jsTask) })
+			.pipe(newer('dist/js/index.js'))
+			.pipe(sourceMap.init())
+			// 		.pipe(babel({ presets: ['@babel/env'] }))
+			.pipe(concat('index.js'))
+			.pipe(uglifyJs())
+			.pipe(sourceMap.write('.'))
+			.pipe(dest('dist/js/'))
+			.pipe(connect.reload())
+	);
+};
 const imgTask = () => {
 	return src('./src/img/**/*', { since: lastRun(imgTask) })
 		.pipe(newer('dist/img'))
@@ -64,10 +66,10 @@ const watchTask = () => {
 		[
 			'./src/html/**/*.pug',
 			'./src/css/**/*.scss',
-			// './src/js/*.js',
+			'./src/js/*.js',
 			'./src/img/*',
 		],
-		series(htmlTask, cssTask, /*jsTask*/ imgTask),
+		series(htmlTask, cssTask, jsTask, imgTask),
 	);
 };
 
