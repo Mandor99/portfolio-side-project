@@ -1,0 +1,1 @@
+{"version":3,"sources":["base/_reset.scss"],"names":[],"mappings":"AAAA,qBAGC,SAAU,CACV,QAAS,CACT,0BAAY,CAAZ,kBAAmB,CACnB,UAGA,6BAAY,CAAZ,qBAAsB,CACtB,KAEA,gBAAiB","file":"styles.css","sourcesContent":["*,\n*::before,\n*::after {\n\tpadding: 0;\n\tmargin: 0;\n\tbox-sizing: inherit;\n}\nbody,\nhtml {\n\tbox-sizing: border-box;\n}\nbody {\n\tmin-height: 300vh;\n}\n"]}

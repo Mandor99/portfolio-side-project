@@ -6,9 +6,9 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const autoPrefixer = require('gulp-autoprefixer');
 // const babel = require('gulp-babel');
-// const concat = require('gulp-concat');
+const concat = require('gulp-concat');
 const zip = require('gulp-zip');
-const uglifyJs = require('gulp-uglify');
+// const uglifyJs = require('gulp-uglify');
 const img = require('gulp-image');
 const connect = require('gulp-connect');
 const newer = require('gulp-newer');
@@ -18,17 +18,19 @@ const htmlTask = () => {
 		.pipe(newer('dist/html/pages/'))
 		.pipe(sourceMap.init())
 		.pipe(pug())
+		.pipe(concat('index.html'))
 		.pipe(sourceMap.write('.'))
-		.pipe(dest('dist/html/pages/'))
+		.pipe(dest('dist/'))
 		.pipe(connect.reload());
 };
 const cssTask = () => {
 	return src('./src/css/*.scss', { since: lastRun(cssTask) })
 		.pipe(newer('dist/css/'))
 		.pipe(sourceMap.init())
-		.pipe(sass())
+		.pipe(sass({ outputStyle: 'compressed' }))
 		.on('error', sass.logError)
 		.pipe(autoPrefixer())
+		.pipe(concat('styles.css'))
 		.pipe(sourceMap.write('.'))
 		.pipe(dest('dist/css/'))
 		.pipe(connect.reload());
@@ -45,7 +47,7 @@ const cssTask = () => {
 // 		.pipe(connect.reload());
 // };
 const imgTask = () => {
-	return src('./src/img/*', { since: lastRun(imgTask) })
+	return src('./src/img/**/*', { since: lastRun(imgTask) })
 		.pipe(newer('dist/img'))
 		.pipe(img())
 		.pipe(dest('dist/img/'));
@@ -58,10 +60,15 @@ const syncTask = () => {
 };
 
 const watchTask = () => {
-	watch('./src/html/**/*.pug', htmlTask);
-	watch('./src/css/**/*.scss', cssTask);
-	// watch('./src/js/*.js', jsTask);
-	watch('./src/img/*', imgTask);
+	return watch(
+		[
+			'./src/html/**/*.pug',
+			'./src/css/**/*.scss',
+			// './src/js/*.js',
+			'./src/img/*',
+		],
+		series(htmlTask, cssTask, /*jsTask*/ imgTask),
+	);
 };
 
 exports.html = htmlTask;

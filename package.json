@@ -26,12 +26,13 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.2",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "gulp-concat": "^2.6.1"
   },
   "browserslist": [
     "last 2 version",
     "> 2%"
-  ]
+  ],
+  "dependencies": {}
 }
