@@ -1,2 +1,2 @@
-$(function(){console.log($(".name")),$(".name").click(function(){$("body").css("background","#888")})});
+$(function(){});
 //# sourceMappingURL=index.js.map

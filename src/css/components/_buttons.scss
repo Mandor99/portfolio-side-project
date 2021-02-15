@@ -1,0 +1,48 @@
+.buttons-group {
+	// background-color: $white-color;
+}
+.button {
+	position: relative;
+	border: 3px solid transparent;
+	border-radius: 5px;
+	padding: 0.8rem 2rem;
+	font-weight: 500;
+
+	&-primary {
+		background: $gradient-color-100;
+		box-shadow: $shadow-100;
+		color: $white-dark;
+		background-clip: padding-box;
+		transition: background 0.3s ease-in-out;
+
+		&:hover {
+			background: $white-dark;
+			color: $black-color;
+		}
+	}
+	&-sec {
+		background-color: $white-color;
+		color: $black-color;
+		background-clip: padding-box;
+		transition: background 0.3s ease-in-out;
+
+		&:hover {
+			background: $gradient-color-100;
+			color: $white-dark;
+			background-clip: padding-box;
+		}
+	}
+
+	&-primary::after,
+	&-sec::after {
+		content: '';
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		right: -2px;
+		bottom: -2px;
+		background-image: $gradient-color-100;
+		border-radius: 5px;
+		z-index: -1;
+	}
+}

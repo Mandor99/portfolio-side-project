@@ -1,0 +1,14 @@
+nav.navbar ul.navbar-nav li.nav-item {
+	text-transform: uppercase;
+	font-weight: 500;
+	padding: 0 $padding-100;
+}
+nav.navbar ul.navbar-nav li.nav-item .nav-link {
+	color: $black-color;
+}
+nav.navbar ul.navbar-nav li.nav-item:nth-child(1) .nav-link,
+nav.navbar ul.navbar-nav li.nav-item:hover .nav-link {
+	background-image: $gradient-color-100;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

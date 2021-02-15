@@ -1,0 +1,37 @@
+header.banner {
+	margin-top: $margin-500;
+	background: url('../img/banner/home-banner.png') no-repeat 0% 50%;
+
+	.banner__titles {
+		padding: 12rem 0;
+		margin-left: -5%;
+		margin-right: 3rem;
+
+		&--1 {
+			font-weight: bold;
+			font-size: 3rem;
+
+			&::after {
+				content: '';
+				display: inline-block;
+				height: 2px;
+				width: 70%;
+				background-color: $black-color;
+				transform: translate(1.2rem, -15px);
+			}
+		}
+
+		&--2 {
+			font-weight: bold;
+			font-size: 5rem;
+		}
+
+		&--3 {
+			font-weight: 500;
+			font-size: 2rem;
+		}
+	}
+	.banner__image {
+		padding: 6rem 0;
+	}
+}
