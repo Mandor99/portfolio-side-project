@@ -1,0 +1,23 @@
+.about {
+	margin-top: $margin-500;
+	&__article {
+		padding-top: $padding-200;
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 3rem;
+		span {
+			display: block;
+			letter-spacing: 1.5rem;
+		}
+	}
+
+	&__text {
+		color: $text-color-200;
+		font-size: 0.9rem;
+		&--wrapper {
+			padding: $padding-200 0;
+		}
+	}
+}
