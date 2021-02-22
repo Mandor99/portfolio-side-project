@@ -49,6 +49,26 @@ html(lang="en")
                                     p: a.text-uppercase(href="#") call now
                                     span (+91)-800-555-4986
 
+        section#Services.services
+            .container
+                .services__heading.text-center
+                    h2.services__title.text-uppercase services offers
+                    p.services__info.light-p.py-4 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+                .row
+                    -const service1 = {icon: 's1', heading: 'web developer', info: "Some quick example text to build on the card title and make up the bulk of the card's content."}
+                    -const service2 = {icon: 's2', heading: 'ui/ux', info: "Some quick example text to build on the card title and make up the bulk of the card's content."}
+                    -const service3 = {icon: 's3', heading: 'web design', info: "Some quick example text to build on the card title and make up the bulk of the card's content."}
+                    -const service4 = {icon: 's4', heading: 'seo optimize', info: "Some quick example text to build on the card title and make up the bulk of the card's content."}
+                    -const services = [service1, service2, service3, service4]
+                    each service in services
+                        .col-lg-3.col-md-6.col-sm-12
+                            section.services__card.mx-auto.d-flex.flex-column.align-items-center.text-center
+                                figure.services__card--icon
+                                    img.services__card--icon-img(src=`./img/services/${service.icon}.png`, alt="service icon")
+                                h4.services__card--heading.text-uppercase #{service.heading}
+                                p.services__card--info.light-p.py-2 #{service.info}
+
+
 
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")

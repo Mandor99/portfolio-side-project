@@ -110,3 +110,33 @@
 		}
 	}
 }
+
+/**********************/
+.services {
+	margin-top: $margin-500-xl;
+
+	&__heading {
+		margin-bottom: $margin-300;
+	}
+
+	&__card {
+		padding: 2rem 1.5rem;
+		transition: all 0.2s ease;
+		background-color: $bg-color-100;
+		width: 15rem;
+
+		&--icon {
+			margin-bottom: $margin-300;
+		}
+
+		&:hover {
+			box-shadow: $shadow-100;
+		}
+
+		&--heading {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+/**************************/
