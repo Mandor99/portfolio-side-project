@@ -27,6 +27,27 @@ html(lang="en")
                             p.about__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati molestias sed quas praesentium assumenda doloremque dolore nemo quo labore nostrum quia facilis, a dolores voluptatum accusamus consectetur nisi. Eligendi libero voluptatem fugit, perspiciatis quam doloremque autem dolorem.
                         button.btn.button-primary.button.text-uppercase.mr-4(type='button') download cv
 
+        section#Clients.clients
+            .container
+                .row
+                    section.clients__logos.col-lg-6.col-md-12
+                        -const logos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                        each logo in logos
+                            figure.clients__logo
+                                img(src=`./img/brands/logo${logo}.png`, alt="brand logo")
+                    section.clients__exp.col-lg-6.col-md-12
+                        .clients__contact--wrapper.d-flex.flex-column.justify-content-space-between
+                            .clients__info.d-flex
+                                h4.clients__info--heading1 10
+                                h4.clients__info--heading2.text-uppercase
+                                    span years 
+                                    span experience 
+                                    span working 
+                            .clients__contact.d-flex
+                                div.clients__contact--icon: i.fas.fa-phone-alt.fa-3x
+                                div.clients__contact--infoWrapper
+                                    p: a.text-uppercase(href="#") call now
+                                    span (+91)-800-555-4986
 
 
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")

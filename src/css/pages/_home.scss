@@ -21,3 +21,139 @@
 		}
 	}
 }
+/***********************/
+.clients {
+	margin-top: $margin-500-xl;
+
+	&__logos {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-gap: $gap-100;
+	}
+
+	&__logo {
+		border: 1px solid $border-color-100;
+		height: 100px;
+		min-width: 150px;
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		margin-bottom: 0;
+
+		&:hover {
+			box-shadow: $shadow-100;
+			transform: scale(1.05);
+
+			& img {
+				filter: brightness(0.15);
+			}
+		}
+
+		img {
+			width: 60%;
+		}
+	}
+
+	&__contact--wrapper {
+		background-color: #e029290a;
+		width: 400px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-left: 7rem;
+	}
+
+	&__info {
+		padding: 2rem 1rem;
+		gap: 1rem;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			margin-left: -8rem;
+			background: url('../img/backgrounds/client-info-bg.png') no-repeat 60px
+				20px;
+			width: 100%;
+			height: 200px;
+		}
+
+		&--heading1 {
+			font-size: 5rem;
+			color: #854fee;
+		}
+
+		&--heading2 {
+			padding-top: 0.7rem;
+
+			span {
+				display: block;
+				font-size: 1rem;
+				font-weight: 600;
+				line-height: 1.7;
+			}
+		}
+	}
+
+	&__contact {
+		gap: 2rem;
+		padding: 2rem 1rem;
+
+		&--infoWrapper a {
+			font-size: 2rem;
+		}
+	}
+}
+
+// .clients__contact--wrapper {
+// 	background-color: #e029290a;
+// 	width: 400px;
+// 	height: 400px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-between;
+// 	margin-left: 7rem;
+// }
+// .clients__info {
+// 	padding: 2rem 1rem;
+// 	gap: 1rem;
+// 	position: relative;
+// 	&::after {
+// 		content: '';
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		z-index: -1;
+// 		margin-left: -8rem;
+// 		background: url('../img/backgrounds/client-info-bg.png') no-repeat 60px 20px;
+// 		width: 100%;
+// 		height: 200px;
+// 	}
+// }
+// h4.clients__info--heading1 {
+// 	/* padding-right: 1rem; */
+// 	font-size: 5rem;
+// 	color: #854fee;
+// }
+// h4.clients__info--heading2.text-uppercase {
+// 	padding-top: 0.7rem;
+// }
+// span.x {
+// 	display: block;
+// 	font-size: 1rem;
+// 	font-weight: 600;
+// 	line-height: 1.7;
+// }
+// .clients__contact.d-flex {
+// 	gap: 2rem;
+// 	padding: 2rem 1rem;
+// }
+// .clients__contact--infoWrapper a {
+// 	font-size: 2rem;
+// }
