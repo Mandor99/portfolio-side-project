@@ -48,6 +48,9 @@ const jsTask = () => {
 			.pipe(connect.reload())
 	);
 };
+const vendorTask = () => {
+	return src('./src/vendor/dist/*.*').pipe(dest('dist/vendor/dist/'));
+};
 const imgTask = () => {
 	return src('./src/img/**/*', { since: lastRun(imgTask) })
 		.pipe(newer('dist/img'))
@@ -68,8 +71,9 @@ const watchTask = () => {
 			'./src/css/**/*.scss',
 			'./src/js/*.js',
 			'./src/img/*',
+			'./src/vendor/dist/*.*',
 		],
-		series(htmlTask, cssTask, jsTask, imgTask),
+		series(htmlTask, cssTask, jsTask, imgTask, vendorTask),
 	);
 };
 
@@ -80,4 +84,4 @@ exports.img = imgTask;
 exports.compress = compressTask;
 exports.sync = syncTask;
 exports.build = compressTask;
-exports.default = parallel(watchTask, syncTask);
+exports.default = parallel(vendorTask, watchTask, syncTask);

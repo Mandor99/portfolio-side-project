@@ -6,6 +6,7 @@ html(lang="en")
         title Portfolio
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        link(rel="stylesheet", href="./vendor/dist/magnific-popup.css")
         link(rel="stylesheet" href="./css/styles.css")
     body
 
@@ -68,9 +69,41 @@ html(lang="en")
                                 h4.services__card--heading.text-uppercase #{service.heading}
                                 p.services__card--info.light-p.py-2 #{service.info}
 
-
+        section#Portfolio.portfolio
+            .container
+                .portfolio__heading
+                    h2.portfolio__heading--1.text-uppercase recently done projects
+                    h2.portfolio__heading--2.text-uppercase quality work
+                div.portfolio__button-group
+                    -const buttons = ['all', 'popular', 'latest', 'following', 'upcoming']
+                    each btn in buttons
+                        if btn ==='all'
+                            button#btn1.active.btn.portfolio__btn.text-uppercase(data-filter='*') #{btn}
+                        else
+                            button.btn.portfolio__btn.text-uppercase(data-filter=`.${btn}`) #{btn}
+                -const project1 = {img: 'p1', title: 'minimal design', sort: 'latest'}
+                -const project2 = {img: 'p2', title: 'paint wall', sort: 'popular'}
+                -const project3 = {img: 'p3', title: 'female light', sort: 'popular'}
+                -const project4 = {img: 'p4', title: 'fourth air', sort: 'upcoming'}
+                -const project5 = {img: 'p5', title: 'together sign', sort: 'following'}
+                -const project6 = {img: 'p6', title: 'multiple fawn', sort: 'upcoming'}
+                -const project7 = {img: 'p7', title: 'green heaven', sort: 'following'}
+                -const project8 = {img: 'p8', title: 'camera lens', sort: 'upcoming'}
+                -const project9 = {img: 'p9', title: 'fly male', sort: 'following'}
+                -const projects = [project1, project2, project3, project4, project5, project6, project7, project8, project9]
+                .row.grid
+                    each project in projects
+                        .col-lg-4.col-md-6.col-sm-12.portfolio__project.grid-item(class=`${project.sort}`)
+                            .portfolio__project-card
+                                figure.portfolio__project--card-thumb
+                                    a.portfolio__popupLink(href=`./img/portfolio/${project.img}.jpg`): img.img-fluid(src=`./img/portfolio/${project.img}.jpg`, alt="portfolio project")
+                                .portfolio__project--card-info
+                                    h4.portfolio__project--card-title.text-uppercase #{project. title}
+                                    p.light-p.text-capitalize #{project.sort}, portfolio
 
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
         script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+        script(src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js")
+        script(src="./vendor/dist/jquery.magnific-popup.min.js")
         script(src="./js/index.js")
