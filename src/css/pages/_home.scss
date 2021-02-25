@@ -166,3 +166,30 @@
 		}
 	}
 }
+
+/***********************/
+.blog {
+	margin-top: $margin-500-xl;
+
+	&__heading {
+		margin-bottom: $margin-300;
+		&--info {
+			color: $text-color-200;
+		}
+	}
+
+	&__slider-row {
+		box-shadow: $shadow-200;
+		margin-bottom: $margin-300;
+	}
+
+	.owl-carousel.owl-drag .owl-item {
+		padding: 0 $padding-200;
+	}
+	.owl-carousel button.owl-dot {
+		outline: none;
+	}
+	.owl-theme .owl-dots .owl-dot.active span {
+		background: $primary-color-100;
+	}
+}

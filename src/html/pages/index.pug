@@ -7,6 +7,8 @@ html(lang="en")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
         link(rel="stylesheet", href="./vendor/dist/magnific-popup.css")
+        link(rel="stylesheet", href="./vendor/dist/owl.carousel.min.css")
+        link(rel="stylesheet", href="./vendor/dist/owl.theme.default.min.css")
         link(rel="stylesheet" href="./css/styles.css")
     body
 
@@ -101,9 +103,33 @@ html(lang="en")
                                     h4.portfolio__project--card-title.text-uppercase #{project. title}
                                     p.light-p.text-capitalize #{project.sort}, portfolio
 
+        section#Blog.blog
+            .container
+                .blog__heading.text-center
+                    h2.blog__heading--title.text-uppercase clients say about me
+                    p.blog__heading--info.py-4 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, deleniti recusandae. Esse incidunt rem repellendus ab voluptates maxime? Nemo, numquam!
+                .carousel: .owl-carousel.owl-theme.blog__slider
+                    -const comment1 = {img: 't1', name: 'john martin', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comment2 = {img: 't2', name: 'mac hill', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comment3 = {img: 't1', name: 'john martin', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comment4 = {img: 't2', name: 'mac hill', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comment5 = {img: 't1', name: 'john martin', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comment6 = {img: 't2', name: 'macc hill', comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum necessitatibus iure veniam magni nam laboriosam vero in voluptates.'}
+                    -const comments = [comment1, comment2, comment3, comment4, comment5, comment6]
+                    each comment in comments
+                        .row.blog__slider-row
+                            figure.p-4.col-lg-4.col-md-12.blog__slider--pic
+                                img.img-fluid(src=`./img/testimonials/${comment.img}.jpg`, alt="client picture")
+                            article.pt-4.col-lg-8.col-md-12.blog__slider--infoWrapper
+                                h4.blog__slider--name.text-uppercase #{comment.name}
+                                p.light-p.blog__slider--comment #{comment.comment}
+                        
+
+
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
         script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
         script(src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js")
         script(src="./vendor/dist/jquery.magnific-popup.min.js")
+        script(src="./vendor/dist/owl.carousel.min.js")
         script(src="./js/index.js")

@@ -19,4 +19,20 @@ $(function () {
 		// delegate: 'a',
 		gallery: { enabled: true },
 	});
+
+	/*********owl carousal slider *************** */
+	$('.owl-carousel').owlCarousel({
+		loop: true,
+		dots: true,
+		autoplay: true,
+		autoplayTimeout: 5000,
+		responsive: {
+			0: {
+				items: 1,
+			},
+			560: {
+				items: 2,
+			},
+		},
+	});
 });
