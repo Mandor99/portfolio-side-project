@@ -1,5 +1,7 @@
 $(function () {
 	const btnFilter = $('.portfolio__btn');
+	const navBar = $('nav.navbar');
+	console.log(navBar);
 
 	/********isotope filter plugin ***************** */
 	btnFilter.on('click', function (e) {
@@ -34,5 +36,12 @@ $(function () {
 				items: 2,
 			},
 		},
+	});
+
+	/**********sticky navbar ******************** */
+	$(window).on('scroll', () => {
+		$(window).scrollTop() > 100
+			? navBar.addClass('navbar__sticky')
+			: navBar.removeClass('navbar__sticky');
 	});
 });

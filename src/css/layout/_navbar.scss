@@ -12,3 +12,14 @@ nav.navbar ul.navbar-nav li.nav-item:hover .nav-link {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.navbar__sticky {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: #fff;
+	box-shadow: $shadow-100;
+	transition: all 0.2s ease;
+}
