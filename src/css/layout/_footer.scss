@@ -1,0 +1,33 @@
+.footer {
+	// margin-top: $margin-500-xl;
+	background: url('../img/backgrounds/footer-bg.png') no-repeat;
+	padding: $padding-300 * 2 0;
+
+	&__socialMedia {
+		gap: $gap-200;
+	}
+
+	&__contact {
+		color: $border-color-100;
+		font-size: 2rem;
+		padding: 1.5rem;
+		transition: all 0.2s ease;
+
+		$iconColors: (
+			'facebook': #3b5998,
+			'instagram': #f77737,
+			'youtube': #ff0000,
+			'twitter': #1da1f2,
+		);
+		@each $icon, $color in $iconColors {
+			&.#{$icon}:hover {
+				color: $color;
+			}
+		}
+	}
+
+	&__copyright b {
+		color: $primary-color-100;
+		cursor: pointer;
+	}
+}

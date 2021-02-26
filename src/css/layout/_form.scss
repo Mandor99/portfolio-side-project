@@ -1,0 +1,49 @@
+.contact {
+	margin-top: $margin-500-xl;
+
+	&__bg {
+		background: url('../img/backgrounds/subscribe-bg.png') no-repeat;
+		padding: 12rem 0;
+	}
+
+	&__heading {
+		&--title {
+			color: $white-dark;
+		}
+		&--info {
+			color: $white-dark;
+		}
+	}
+	&__form {
+		&--input {
+			width: 400px !important;
+			padding: 1.5rem 1rem;
+			background-color: transparent;
+			color: $white-dark;
+			font-size: 1rem;
+
+			&::placeholder {
+				color: $white-dark;
+			}
+
+			&:focus {
+				color: $white-dark;
+				background-color: inherit;
+				outline: 0;
+				box-shadow: none;
+			}
+		}
+
+		&--btn {
+			padding: 0.8rem 3rem;
+			background-color: $white-dark;
+			color: #000;
+			font-size: 1rem;
+
+			&:hover {
+				background-color: darken($white-dark, 10%);
+				color: #000;
+			}
+		}
+	}
+}
