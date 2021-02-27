@@ -6,7 +6,7 @@ nav.navbar.navbar-expand-lg.navbar-light
             span.navbar-toggler-icon
         #navbarNav.collapse.navbar-collapse
             ul.navbar-nav.ml-auto
-                -const navItems = ['home', 'about', 'services', 'portfolio', 'pages', 'blog', 'contact']
+                -const navItems = ['home', 'about', 'clients', 'services', 'portfolio', 'blog',  'contact']
                 each item in navItems
                     li.nav-item
-                        a.nav-link(aria-current='page' href='#') #{item}
+                        a.nav-link(aria-current='page' href=`#${item}`) #{item}

@@ -3,8 +3,12 @@
 	background: url('../img/backgrounds/footer-bg.png') no-repeat;
 	padding: $padding-300 * 2 0;
 
-	@include responsive(mob) {
+	@include responsive(tab) {
 		background-size: cover;
+	}
+
+	@include responsive(lap) {
+		padding: 10rem 0 0;
 	}
 
 	&__socialMedia {

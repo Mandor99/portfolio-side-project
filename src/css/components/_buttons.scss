@@ -46,3 +46,6 @@
 		z-index: -1;
 	}
 }
+button:focus {
+	outline: 5px auto $primary-color-100;
+}

@@ -5,10 +5,10 @@
 		background: url('../img/backgrounds/subscribe-bg.png') no-repeat;
 		padding: 12rem 0;
 
-		@include responsive(mob) {
+		@include responsive(tab) {
 			background: url('../img/backgrounds/subscribe-bg.png') no-repeat 40% /
 				cover;
-			padding: 6rem 0;
+			padding: 6rem 1rem;
 		}
 	}
 
@@ -32,6 +32,10 @@
 			background-color: transparent;
 			color: $white-dark;
 			font-size: 1rem;
+
+			@include responsive(mob) {
+				width: 80% !important;
+			}
 
 			&::placeholder {
 				color: $white-dark;

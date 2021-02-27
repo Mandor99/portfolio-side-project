@@ -10,6 +10,10 @@
 		span {
 			display: block;
 			letter-spacing: 1.5rem;
+
+			@include responsive(mob) {
+				letter-spacing: 1rem;
+			}
 		}
 	}
 
@@ -59,7 +63,7 @@
 
 	&__contact--wrapper {
 		background-color: #e029290a;
-		width: 400px;
+		max-width: 400px;
 		height: 400px;
 		display: flex;
 		flex-direction: column;
@@ -67,8 +71,13 @@
 		margin-left: 7rem;
 
 		@include responsive(mob) {
-			margin-top: $margin-500;
 			margin-left: 3rem;
+		}
+
+		@include responsive(tab) {
+			margin-top: $margin-500;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -90,6 +99,10 @@
 
 			@include responsive(mob) {
 				margin-top: -$margin-500;
+				margin-left: -9rem;
+			}
+
+			@include responsive(lap) {
 				margin-left: -9rem;
 			}
 		}
@@ -136,7 +149,10 @@
 		width: 15rem;
 
 		@include responsive(mob) {
-			width: 50%;
+			width: 65%;
+		}
+
+		@include responsive(tab) {
 			margin-bottom: $margin-300;
 		}
 
@@ -158,19 +174,41 @@
 .portfolio {
 	margin-top: $margin-500-xl;
 
+	& .container {
+		@include responsive(mob) {
+			width: 95%;
+		}
+	}
+
 	&__heading {
 		margin-bottom: $margin-500;
+
+		@include responsive(lap) {
+			margin-bottom: $margin-500/2;
+		}
 	}
 
 	&__button-group {
 		margin-bottom: $margin-300;
+
+		@include responsive(lap) {
+			margin-bottom: $margin-300/2;
+		}
 	}
 
 	&__btn {
 		padding: 0.8rem 2rem;
 		font-weight: 500;
-	}
 
+		@include responsive(mob) {
+			padding: 0.8rem 0.5rem;
+		}
+	}
+	& .grid {
+		@include responsive(mob) {
+			text-align: center;
+		}
+	}
 	&__popupLink {
 		img {
 			transition: all 0.2s ease;
@@ -190,6 +228,10 @@
 		margin-bottom: $margin-300;
 		&--info {
 			color: $text-color-200;
+
+			@include responsive(lap) {
+				width: 95%;
+			}
 		}
 	}
 

@@ -12,6 +12,8 @@
 	}
 }
 .container {
+	margin-right: auto;
+	margin-left: auto;
 	@include responsive(mob) {
 		width: 90%;
 	}

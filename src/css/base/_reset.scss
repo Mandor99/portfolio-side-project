@@ -13,13 +13,18 @@ html {
 }
 html {
 	font-size: 100%;
+	scroll-behavior: smooth;
+
+	@include responsive(lap) {
+		font-size: 85%;
+	}
 
 	@include responsive(mob) {
 		font-size: 60%;
 	}
 }
 body {
-	min-height: 700vh;
+	// min-height: 700vh test Only;
 	line-height: 1.7;
 	font-family: var(--mainFont);
 }
