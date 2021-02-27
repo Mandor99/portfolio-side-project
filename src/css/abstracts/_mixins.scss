@@ -1,0 +1,30 @@
+$mob: 600px;
+$tab: 900px;
+$lap: 1200px;
+$desktop: 1400px;
+
+@mixin responsive($size) {
+	@if $size == mob {
+		@media only screen and (max-width: #{$mob}) {
+			@content;
+		}
+	}
+
+	@if $size == tab {
+		@media only screen and (max-width: #{$tab}) {
+			@content;
+		}
+	}
+
+	@if $size == lap {
+		@media only screen and (max-width: #{$lap}) {
+			@content;
+		}
+	}
+
+	@if $size == desktop {
+		@media only screen and (max-width: #{$desktop}) {
+			@content;
+		}
+	}
+}

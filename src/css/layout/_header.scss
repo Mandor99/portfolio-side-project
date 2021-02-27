@@ -2,6 +2,11 @@ header.banner {
 	margin-top: $margin-500;
 	background: url('../img/banner/home-banner.png') no-repeat 0% 50%;
 
+	.container {
+		@include responsive(mob) {
+			width: 80%;
+		}
+	}
 	.banner__titles {
 		padding: 12rem 0;
 		margin-left: -5%;

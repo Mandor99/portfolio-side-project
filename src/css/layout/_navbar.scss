@@ -1,25 +1,30 @@
-nav.navbar ul.navbar-nav li.nav-item {
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 0 $padding-100;
-}
-nav.navbar ul.navbar-nav li.nav-item .nav-link {
-	color: $black-color;
-}
-nav.navbar ul.navbar-nav li.nav-item:nth-child(1) .nav-link,
-nav.navbar ul.navbar-nav li.nav-item:hover .nav-link {
-	background-image: $gradient-color-100;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.navbar__sticky {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
-	background-color: #fff;
-	box-shadow: $shadow-100;
-	transition: all 0.2s ease;
+nav.navbar {
+	&__sticky {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		background-color: #fff;
+		box-shadow: $shadow-100;
+		transition: all 0.2s ease;
+	}
+
+	& ul.navbar-nav li.nav-item {
+		text-transform: uppercase;
+		font-weight: 500;
+		padding: 0 $padding-100;
+
+		& .nav-link {
+			color: $black-color;
+		}
+
+		&:nth-child(1) .nav-link,
+		&:hover .nav-link {
+			background-image: $gradient-color-100;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
 }

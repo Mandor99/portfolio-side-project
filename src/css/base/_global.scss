@@ -1,4 +1,18 @@
 .light-p {
 	color: $text-color-200;
 	font-size: 0.9rem;
+
+	@include responsive(mob) {
+		font-size: 1rem;
+	}
+}
+.img-fluid {
+	@include responsive(mob) {
+		width: 90%;
+	}
+}
+.container {
+	@include responsive(mob) {
+		width: 90%;
+	}
 }

@@ -65,6 +65,11 @@
 		flex-direction: column;
 		justify-content: space-between;
 		margin-left: 7rem;
+
+		@include responsive(mob) {
+			margin-top: $margin-500;
+			margin-left: 3rem;
+		}
 	}
 
 	&__info {
@@ -82,6 +87,11 @@
 				20px;
 			width: 100%;
 			height: 200px;
+
+			@include responsive(mob) {
+				margin-top: -$margin-500;
+				margin-left: -9rem;
+			}
 		}
 
 		&--heading1 {
@@ -124,6 +134,11 @@
 		transition: all 0.2s ease;
 		background-color: $bg-color-100;
 		width: 15rem;
+
+		@include responsive(mob) {
+			width: 50%;
+			margin-bottom: $margin-300;
+		}
 
 		&--icon {
 			margin-bottom: $margin-300;
@@ -181,8 +196,19 @@
 	&__slider-row {
 		box-shadow: $shadow-200;
 		margin-bottom: $margin-300;
-	}
 
+		@include responsive(mob) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	}
+	&__slider--pic {
+		@include responsive(mob) {
+			width: 75%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
 	.owl-carousel.owl-drag .owl-item {
 		padding: 0 $padding-200;
 	}

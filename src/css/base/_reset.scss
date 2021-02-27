@@ -11,6 +11,13 @@ body,
 html {
 	box-sizing: border-box;
 }
+html {
+	font-size: 100%;
+
+	@include responsive(mob) {
+		font-size: 60%;
+	}
+}
 body {
 	min-height: 700vh;
 	line-height: 1.7;

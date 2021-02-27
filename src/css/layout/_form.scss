@@ -4,6 +4,12 @@
 	&__bg {
 		background: url('../img/backgrounds/subscribe-bg.png') no-repeat;
 		padding: 12rem 0;
+
+		@include responsive(mob) {
+			background: url('../img/backgrounds/subscribe-bg.png') no-repeat 40% /
+				cover;
+			padding: 6rem 0;
+		}
 	}
 
 	&__heading {
@@ -12,6 +18,11 @@
 		}
 		&--info {
 			color: $white-dark;
+
+			@include responsive(mob) {
+				width: 85%;
+				margin: auto;
+			}
 		}
 	}
 	&__form {
@@ -39,6 +50,10 @@
 			background-color: $white-dark;
 			color: #000;
 			font-size: 1rem;
+
+			@include responsive(mob) {
+				margin: 1.5rem 0 !important;
+			}
 
 			&:hover {
 				background-color: darken($white-dark, 10%);
